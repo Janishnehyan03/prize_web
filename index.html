@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prize Page</title>
+    <meta name="description" content="Hurry up! collect your cash right now">
+
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #container {
+            text-align: center;
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+
+        #heading {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .paragraph {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        #cash {
+            font-weight: bold;
+            color: #2196F3;
+        }
+
+        #redeemButton {
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #2196F3;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 0 2px 5px rgba(33, 150, 243, 0.3);
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <h1 id="heading">Congratulations!</h1>
+        <p class="paragraph">
+            You've won ₹<span id="cash"></span> as cash.
+        </p>
+        <p class="paragraph">
+            If you want to redeem now, login to your Instagram account and redeem the code:
+        </p>
+        <a href="/">
+            <button id="redeemButton">Login Now</button>
+        </a>
+        <p class="paragraph">
+            Your redeem code: <span id="redeemCode" style="color: #2196F3;"></span>
+        </p>
+    </div>
+
+    <script>
+        // Function to generate a random cash prize between 10 and 200
+        function generateRandomCash() {
+            return Math.floor(Math.random() * (200 - 10 + 1)) + 10;
+        }
+
+        // Function to generate a random redeem code
+        function generateRandomCode() {
+            return Math.random().toString(36).substring(7).toUpperCase();
+        }
+
+        // Update the DOM with the generated values
+        document.getElementById('cash').innerText = generateRandomCash();
+        document.getElementById('redeemCode').innerText = generateRandomCode();
+    </script>
+
+</body>
+
+</html>
